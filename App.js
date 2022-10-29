@@ -1,117 +1,77 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
+import 'react-native-gesture-handler';
 import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import { StyleSheet } from 'react-native'
 
-/* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
- * LTI update could not be added via codemod */
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+import Inicio from './views/Inicio';
+import IngresarProducto from './views/IngresarProducto';
+import NuevaOrden from './views/NuevaOrden';
+import OpcionesAdmin from './views/OpcionesAdmin';
+import Categoria from './components/Categoria';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+const Stack = createStackNavigator();
+
+const App = () => {
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+
+    <>
+      <NavigationContainer>
+
+        <Stack.Navigator initialRouteName='Inicio'>
+          <Stack.Screen
+            name='Inicio'
+            component={Inicio}
+            options={{
+              title: "Selección de Usuario",
+              headerStyle: {
+                backgroundColor: '#E5391D'
+              },
+              headerTintColor: '#FFF',
+              headerTitleAlign: 'center'
+            }}
+          />
+
+          <Stack.Screen
+            name='OpcionesAdmin'
+            component={OpcionesAdmin}
+            options={({ navigation, route }) => ({
+              title: "Opciones Administrador"
+            })}
+          />
+
+          <Stack.Screen
+            name='AgregarCategoria'
+            component={Categoria}
+            options={{
+              title: "Agregar Categoria"
+            }}
+          />
+          <Stack.Screen
+            name='IngresarProducto'
+            component={IngresarProducto}
+            options={{
+              title: "Nuevo Producto"
+            }}
+          />
+          <Stack.Screen
+            name='NuevaOrden'
+            component={NuevaOrden}
+          />
+        </Stack.Navigator>
+
+      </NavigationContainer>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+  btnAdmin: {
+    backgroundColor: 'FFF'
+  }
+})
 
 export default App;
