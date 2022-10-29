@@ -1,0 +1,76 @@
+{
+  "category": [
+    {
+      "nombre": "FANTa",
+      "id": 1
+    },
+    {
+      "nombre": "coca cola",
+      "id": 2
+    },
+    {
+      "nombre": "Bistec",
+      "id": 3
+    },
+    {
+      "nombre": "ONCE",
+      "id": 4
+    },
+    {
+      "nombre": "BEBIDAS",
+      "id": 5
+    },
+    {
+      "nombre": "ALMUERZO",
+      "id": 6
+    },
+    {
+      "nombre": "CENA",
+      "id": 7
+    },
+    {
+      "nombre": "DESA",
+      "id": 8
+    },
+    {
+      "nombre": "ALMUERZ",
+      "id": 9
+    },
+    {
+      "nombre": "DESA RICO",
+      "id": 10
+    },
+    {
+      "nombre": "RICO RICO ",
+      "id": 11
+    },
+    {
+      "nombre": "EJEMPLO",
+      "id": 12
+    },
+    {
+      "nombre": "EJEMPLO2",
+      "id": 13
+    },
+    {
+      "nombre": "EJEMPLO3",
+      "id": 14
+    },
+    {
+      "nombre": "EJEMPLO4",
+      "id": 15
+    },
+    {
+      "nombre": "EJEMPLO5",
+      "id": 16
+    },
+    {
+      "nombre": "EJEMPLO6",
+      "id": 17
+    },
+    {
+      "nombre": "EJEMPLO7",
+      "id": 18
+    }
+  ]
+}
